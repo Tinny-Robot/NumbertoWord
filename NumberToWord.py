@@ -39,24 +39,24 @@ def ntw(number):
         n = (nword[number])
     elif number < 100 and number % 10 != 0:
         n = ' '.join([nword[(number//10)*10],nword[(number%10)],])
-    elif number > 100 and number < 121:
+    elif 100 < number < 121:
         n = ' '.join([nword[number//100], 'hundred and', nword[number%100]])
-    elif number > 120 and number < 1000:
+    elif 120 < number < 1000:
         n = ' '.join([nword[number//100], 'hundred and ', ])
         n += ntw(number %100)
-    elif number > 1000 and number < 1000000:
+    elif 1000 < number < 1000000:
         n = ntw(number //1000) + " thousand"
         try:
             n+= ', '+ntw(number%1000)
         except:
             pass
-    elif number > 1000000 and number < 1000000000:
+    elif  1000000 < number < 1000000000:
         n = ntw(number //1000000) + " Million"
         try:
             n+= ', '+ntw(number%1000000)
         except:
             pass
-    elif number > 1000000000 and number < 1000000000000:
+    elif 1000000000 < number < 1000000000000:
         n = ntw(number //1000000000) + " Billion"
         try:
             n+= ', '+ntw(number%1000000000)
